@@ -13,7 +13,7 @@ namespace DiversUI
 		{
 			InitializeComponent();
 
-			MainPage = new DiversUI.WebViewPage();
+			MainPage = new DiversUI.SliderPage();
 		}
 
 		protected override void OnStart ()
