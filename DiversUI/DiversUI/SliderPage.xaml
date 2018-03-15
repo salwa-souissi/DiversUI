@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="DiversUI.SliderPage">
+    <StackLayout>
+
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <Slider x:Name="SDemo" Minimum="0" Maximum="100" VerticalOptions="Center" ValueChanged="OnSliderValueChanged" />
+            <Label x:Name="lbldisp" HorizontalOptions="Center" ></Label>
+</StackLayout>
+
+    <StackLayout HorizontalOptions="Center">
+    <Label x:Name="lbldisp2" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Switch x:Name="Switcher" Toggled="SwitchToggled" />
+            <!--<Switch x:Name="Switcher" IsToggled="  {Binding ToggleIsVisible, Converter={StaticResource Focus}}"  />-->
+          
+        </StackLayout>
+       
+        <StackLayout HorizontalOptions="Center">
+            <DatePicker x:Name="DatePicker"
+                        VerticalOptions="CenterAndExpand" DateSelected="DatePicker_DateSelected" >
+                <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+             </DatePicker>
+            <Label x:Name="date" Text="{Binding date}"></Label>
+            <Label x:Name="time" Text="{Binding time}"></Label>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

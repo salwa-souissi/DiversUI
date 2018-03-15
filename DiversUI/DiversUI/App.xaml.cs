@@ -13,7 +13,7 @@ namespace DiversUI
 		{
 			InitializeComponent();
 
-			MainPage = new DiversUI.SliderPage();
+			MainPage = new DiversUI.CheckboxesPage();
 		}
 
 		protected override void OnStart ()

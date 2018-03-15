@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             x:Class="DiversUI.CheckboxesPage"
+             >
+
+    <StackLayout>
+    
+            <forms:CarouselView x:Name="MainCarouselView"  BackgroundColor="Aqua" >
+                <forms:CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding source}"></Image>
+                    </DataTemplate>
+                </forms:CarouselView.ItemTemplate>
+            </forms:CarouselView>
+          
+
+
+        <StackLayout Margin="20">
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Padding="1" BackgroundColor="Black" WidthRequest="15" HeightRequest="8" >
+                    <BoxView IsVisible="{Binding Tab1Checked}" x:Name="Cats" WidthRequest="8" HeightRequest="8" BackgroundColor="AliceBlue"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <BoxView.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding TabTappedCommand}" CommandParameter="1"></TapGestureRecognizer>
+                        </BoxView.GestureRecognizers>
+                    </BoxView>
+                </StackLayout>
+                <Label Text="Cats"  TextColor="{Binding Tab2Checked, Converter={StaticResource Check}}"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Padding="1" BackgroundColor="Black" WidthRequest="15" HeightRequest="8" >
+                    <BoxView IsVisible="{Binding Tab2Checked}" x:Name="Dogs" WidthRequest="8" HeightRequest="8"  BackgroundColor="AliceBlue"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                        <BoxView.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding TabTappedCommand}" CommandParameter="2"></TapGestureRecognizer>
+                        </BoxView.GestureRecognizers>
+                    </BoxView>
+                </StackLayout>
+                <Label Text="Dogs"  TextColor="{Binding Tab3Checked, Converter={StaticResource Check}}"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <StackLayout Padding="1" BackgroundColor="Black" WidthRequest="15" HeightRequest="8">
+                    <BoxView IsVisible="{Binding Tab3Checked}" x:Name="Birds" WidthRequest="8" HeightRequest="8" BackgroundColor="AliceBlue"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  >
+                        <BoxView.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding TabTappedCommand}" CommandParameter="3"></TapGestureRecognizer>
+                        </BoxView.GestureRecognizers>
+                    </BoxView>
+                </StackLayout>
+                <Label Text="Birds"  TextColor="{Binding Tab3Checked, Converter={StaticResource Check}}"></Label>
+            </StackLayout>
+        </StackLayout>
+
+
+        <Button Text="Confirm" Clicked="Button_OnClicked"></Button>
+
+    </StackLayout>
+
+</ContentPage>
