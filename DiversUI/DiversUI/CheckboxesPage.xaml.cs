@@ -102,19 +102,34 @@ namespace DiversUI
 
         private void Button_OnClicked(object sender, EventArgs e)
         {
-            if (Cats.BackgroundColor == Color.Black)
+            if (Tab1Checked)
             {
+                foreach (var VARIABLE in CatImages)
+                {
+                    ListImages.Add(VARIABLE);
 
-            }
-            else if (Dogs.BackgroundColor == Color.Black)
-            {
-
-            }
-            else if (Birds.BackgroundColor == Color.Black)
-            {
-
+                }
             }
 
+            if (Tab2Checked)
+            {
+                foreach (var VARIABLE in DogImages)
+                {
+                    ListImages.Add(VARIABLE);
+
+                }
+            }
+
+            if (Tab3Checked)
+            {
+                foreach (var VARIABLE in BirdImages)
+                {
+                    ListImages.Add(VARIABLE);
+
+                }
+               
+            }
+            MainCarouselView.ItemsSource = ListImages;
         }
 
 
@@ -129,7 +144,7 @@ namespace DiversUI
             OnPropertyChanged(propertyName);
             return true;
         }
-        bool tab1Checked = false;
+        bool tab1Checked = true;
         public bool Tab1Checked
         {
             get { return tab1Checked; }
@@ -137,7 +152,7 @@ namespace DiversUI
         }
 
 
-        bool tab2Checked = false;
+        bool tab2Checked = true;
         public bool Tab2Checked
         {
             get { return tab2Checked; }
@@ -145,7 +160,7 @@ namespace DiversUI
         }
 
 
-        bool tab3Checked = false;
+        bool tab3Checked = true;
         public bool Tab3Checked
         {
             get { return tab3Checked; }
